@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golddigger.Models", "Golddigger.Models\Golddigger.Models.csproj", "{6C3DE787-0D8B-4CB6-82DF-4395D5F6DABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golddigger.Data", "Goldddigger.Data\Golddigger.Data.csproj", "{77542802-E0E9-434A-8FDB-FA59079C90CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golddigger", "Golddigger\Golddigger.csproj", "{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C3DE787-0D8B-4CB6-82DF-4395D5F6DABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3DE787-0D8B-4CB6-82DF-4395D5F6DABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3DE787-0D8B-4CB6-82DF-4395D5F6DABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3DE787-0D8B-4CB6-82DF-4395D5F6DABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77542802-E0E9-434A-8FDB-FA59079C90CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77542802-E0E9-434A-8FDB-FA59079C90CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77542802-E0E9-434A-8FDB-FA59079C90CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77542802-E0E9-434A-8FDB-FA59079C90CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
