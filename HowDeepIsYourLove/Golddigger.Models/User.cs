@@ -5,6 +5,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class User : IdentityUser
     {
@@ -12,7 +13,9 @@
         public bool IsFemale { get; set; }
 
         [Required]
-        public byte[] ProfileImage { get; set; }
+        public byte[] ProfilePhoto { get; set; }
+
+        public virtual UserInfo UserInfo { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {

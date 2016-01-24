@@ -6,9 +6,17 @@
 
     public interface IGolddiggerDbContext
     {
-        //IDbSet<Comment> Comments { get; set; }
+        IDbSet<Comment> Comments { get; set; }
 
-        //IDbSet<RealEstate> RealEstates { get; set; }
+        IDbSet<Country> Countries { get; set; }
+
+        IDbSet<Interest> Interests { get; set; }
+
+        IDbSet<Photo> Photo { get; set; }
+
+        IDbSet<Town> Town { get; set; }
+
+        IDbSet<UserInfo> UserInfo { get; set; }
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

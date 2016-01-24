@@ -21,7 +21,7 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username</asp:Label>
             <div class="col-md-10">
-                <asp:TextBox runat="server" ID="Username" CssClass="form-control"/>
+                <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
                     CssClass="text-danger" ErrorMessage="The username field is required." />
             </div>
@@ -45,8 +45,27 @@
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
+            <asp:Label runat="server" CssClass="col-md-2 control-label" AssociatedControlID="Gender">Gender</asp:Label>
+            <asp:RadioButtonList ID="Gender" runat="server" CssClass="radio-inline">
+                <asp:ListItem Value="true">Female</asp:ListItem>
+                <asp:ListItem Value="false">Male</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:RequiredFieldValidator ID="GenderValidator" runat="server"
+                CssClass="text-danger" Display="Dynamic" ControlToValidate="Gender" ErrorMessage="Gender is Required">
+            </asp:RequiredFieldValidator>
+        </div>
+        <div class="form-group">
+                <asp:Label runat="server" CssClass="col-md-2 control-label" AssociatedControlID="Photo">Profile photo</asp:Label>
+            <div class="col-md-10">
+                <asp:FileUpload ID="Photo" runat="server" />
+                <asp:RequiredFieldValidator ID="PhotoValidator" runat="server"
+                    CssClass="text-danger" Display="Dynamic" ControlToValidate="Photo" ErrorMessage="Profile photo is Required">
+                </asp:RequiredFieldValidator>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-4 col-md-10">
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-primary" />
             </div>
         </div>
     </div>

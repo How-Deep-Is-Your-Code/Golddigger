@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Owin;
-using Golddigger.Models;
-
-namespace Golddigger.Account
+﻿namespace Golddigger.Account
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Web;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    
+    using Services.Contracts;
     public partial class Manage : System.Web.UI.Page
     {
+       
+
         protected string SuccessMessage
         {
             get;
@@ -35,6 +32,17 @@ namespace Golddigger.Account
 
         protected void Page_Load()
         {
+            
+
+            //var lol = repo.GetById(this.User.Identity.GetUserId());
+            //var tapo = new List<User>();
+            //var img = Convert.ToBase64String(lol.ProfilePhoto);
+            //ProfileImg.ImageUrl = "data:image/jpeg;base64," + img;
+            //tapo.Add(lol);
+            //this.test.DataSource = tapo;
+            //this.test.DataBind();
+
+
             var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));

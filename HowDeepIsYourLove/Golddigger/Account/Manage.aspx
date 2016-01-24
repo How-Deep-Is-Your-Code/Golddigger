@@ -14,6 +14,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-horizontal">
+                <%--<asp:Image id="ProfileImg" runat="server"></asp:Image>
+                <asp:DetailsView ID="test" runat="server"
+                    AutoGenerateRows="false">
+                    <Fields>
+                        <asp:BoundField DataField="ProfilePhoto"/>
+                        <asp:BoundField DataField="Username" />
+                    </Fields>
+
+                </asp:DetailsView>--%>
                 <h4>Change your account settings</h4>
                 <hr />
                 <dl class="dl-horizontal">

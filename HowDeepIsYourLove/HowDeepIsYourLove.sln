@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golddigger.Data", "Goldddig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golddigger", "Golddigger\Golddigger.csproj", "{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Golddigger.Services", "Golddigger.Services\Golddigger.Services.csproj", "{F55A8275-D288-4879-88DA-9AA784537851}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B30F96E-5F73-4B50-91BF-9BBB3AB49F24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55A8275-D288-4879-88DA-9AA784537851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55A8275-D288-4879-88DA-9AA784537851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55A8275-D288-4879-88DA-9AA784537851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55A8275-D288-4879-88DA-9AA784537851}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

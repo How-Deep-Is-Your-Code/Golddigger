@@ -74,6 +74,11 @@ namespace Golddigger
                 adminLink.Visible = true;
             }
 
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                myProfile.Visible = true;
+            }
+
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Owin;
 using Golddigger.Models;
 using Golddigger.Helpers;
+using System.Web.UI.WebControls;
 
 namespace Golddigger.Account
 {
@@ -16,7 +17,14 @@ namespace Golddigger.Account
         {
             var manager = Context.GetOwinContext().GetUserManager<UserManager>();
             var signInManager = Context.GetOwinContext().Get<SignInManager>();
-            var user = new User() { UserName = Username.Text, Email = Email.Text };
+            var user = new User()
+            {
+                UserName = Username.Text,
+                Email = Email.Text,
+                IsFemale = bool.Parse(Gender.SelectedValue),
+                ProfilePhoto = Photo.FileBytes
+                
+            };
             IdentityResult result = manager.Create(user, Password.Text);
             if (result.Succeeded)
             {

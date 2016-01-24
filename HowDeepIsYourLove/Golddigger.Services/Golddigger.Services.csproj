@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C3DE787-0D8B-4CB6-82DF-4395D5F6DABB}</ProjectGuid>
+    <ProjectGuid>{F55A8275-D288-4879-88DA-9AA784537851}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Golddigger.Models</RootNamespace>
-    <AssemblyName>Golddigger.Models</AssemblyName>
+    <RootNamespace>Golddigger.Services</RootNamespace>
+    <AssemblyName>Golddigger.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,15 +57,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountType.cs" />
-    <Compile Include="Comment.cs" />
-    <Compile Include="Country.cs" />
-    <Compile Include="Interest.cs" />
-    <Compile Include="Photo.cs" />
+    <Compile Include="Contracts\ICommentsService.cs" />
+    <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Town.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="UserInfo.cs" />
+    <Compile Include="UsersService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Goldddigger.Data\Golddigger.Data.csproj">
+      <Project>{77542802-e0e9-434a-8fdb-fa59079c90cd}</Project>
+      <Name>Golddigger.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Golddigger.Models\Golddigger.Models.csproj">
+      <Project>{6c3de787-0d8b-4cb6-82df-4395d5f6dabb}</Project>
+      <Name>Golddigger.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

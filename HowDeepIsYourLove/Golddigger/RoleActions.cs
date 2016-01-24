@@ -35,7 +35,9 @@
             var appUser = new User
             {
                 UserName = "admin",
-                Email = "admin@golddigger.com"
+                Email = "admin@golddigger.com",
+                IsFemale = true,
+                ProfilePhoto = new byte[8]
             };
             IdUserResult = userMgr.Create(appUser, "Pa$$word1");
 
