@@ -76,6 +76,7 @@ namespace Golddigger
 
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
+                this.myProfile.HRef = string.Format("~/Account/Profile.aspx?id={0}", HttpContext.Current.User.Identity.GetUserId());
                 myProfile.Visible = true;
             }
 

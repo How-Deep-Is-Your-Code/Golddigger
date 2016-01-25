@@ -52,7 +52,7 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" id="adminLink" visible="false"
                             href="~/Admin/AdminHome">Admin</a></li>
-                        <li><a runat="server" href="~/Account/Profile" id="myProfile" visible="false">My Profile</a></li>
+                        <li><a runat="server" id="myProfile" visible="false">My Profile</a></li>
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
@@ -81,7 +81,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Golddigger &trade;</p>
             </footer>
         </div>
     </form>
