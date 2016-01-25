@@ -12,12 +12,16 @@
             %>
             <div><%= CurrentUser!=null? CurrentUser.UserName:"" %></div>
             <div><%= CurrentUser!=null? CurrentUser.Email:"" %></div>
+            <asp:ListView ID="UserInterests" runat="server"
+                ItemType="Golddigger.Models.Interest">
+                <ItemTemplate><%#:Item.Name%></ItemTemplate>
+            </asp:ListView>
         </div>
         <div class="col-md-6">
             <div class="well">
                 <asp:Label AssociatedControlID="CommentInput" Text="Add comment" Font-Bold="true" Font-Size="Larger" runat="server" />
                 <asp:TextBox ID="CommentInput" runat="server" CssClass="textInput" />
-                <asp:Button OnClick="AddComment_Click" runat="server" Text="Add Comment" CssClass="btn btn-primary"/>
+                <asp:Button OnClick="AddComment_Click" runat="server" Text="Add Comment" CssClass="btn btn-primary" />
                 <asp:ListView runat="server" ID="ListViewComments" ItemType="Golddigger.Models.Comment" SelectMethod="ListViewComments_GetData">
                     <LayoutTemplate>
                         <h2>Comments</h2>

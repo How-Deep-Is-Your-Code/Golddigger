@@ -5,5 +5,7 @@
     public interface IUserInfoService
     {
         UserInfo GetUserInfoById(string id);
+
+        void Update();
     }
 }

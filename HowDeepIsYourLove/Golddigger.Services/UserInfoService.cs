@@ -17,5 +17,10 @@
         {
             return this.userInfoRepo.GetById(id);
         }
+
+        public void Update()
+        {
+            this.userInfoRepo.SaveChanges();
+        }
     }
 }

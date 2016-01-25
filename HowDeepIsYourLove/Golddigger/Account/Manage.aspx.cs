@@ -19,6 +19,9 @@
         [Inject]
         public IInterestService interests { get; set; }
 
+        [Inject]
+        public IUserInfoService userInfoServ { get; set; }
+
         public UserInfo info { get; set; }
 
 
@@ -50,7 +53,7 @@
 
             this.DropDownListCategories.DataSource = allInterests;
             this.DropDownListCategories.DataBind();
-            this.DropDownListCategories.SelectedIndex = 0;
+            //this.DropDownListCategories.SelectedIndex = 0;
 
 
 
@@ -147,6 +150,8 @@
             currentUser.UserInfo.Interests = interests;
             currentUser.UserInfo.Town = town;
 
+
+            userInfoServ.Update();
             users.Update();
             //(AccountType)Enum.Parse(typeof(AccountType), type);
         }

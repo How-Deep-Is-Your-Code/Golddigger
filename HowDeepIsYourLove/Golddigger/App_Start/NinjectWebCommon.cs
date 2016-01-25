@@ -69,6 +69,7 @@ namespace Golddigger.App_Start
             kernel.Bind<IUsersService>().To<UsersService>().InRequestScope();
             kernel.Bind<IInterestService>().To<InterestService>().InRequestScope();
             kernel.Bind<ICommentsService>().To<CommentsService>().InRequestScope();
+            kernel.Bind<IUserInfoService>().To<UserInfoService>().InRequestScope();
         }        
     }
 }
