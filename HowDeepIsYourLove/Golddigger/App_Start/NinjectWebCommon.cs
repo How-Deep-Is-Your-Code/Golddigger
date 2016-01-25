@@ -10,9 +10,8 @@ namespace Golddigger.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-    using Data;
     using Data.Contracts;
-    using System.Reflection;
+    using Data;
     using Services.Contracts;
     using Services;
     public static class NinjectWebCommon 
@@ -41,7 +40,7 @@ namespace Golddigger.App_Start
         /// Creates the kernel that will manage your application.
         /// </summary>
         /// <returns>The created kernel.</returns>
-        public static IKernel CreateKernel()
+        private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
             try
@@ -63,12 +62,11 @@ namespace Golddigger.App_Start
         /// Load your modules or register your services here!
         /// </summary>
         /// <param name="kernel">The kernel.</param>
-        public static void RegisterServices(IKernel kernel)
-        { 
+        private static void RegisterServices(IKernel kernel)
+        {
             kernel.Bind<IGolddiggerDbContext>().To<GolddiggerDbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfGenericRepository<>));
             kernel.Bind<IUsersService>().To<UsersService>().InRequestScope();
-            //kernel.Bind(b => b.From("Golddigger.Services").SelectAllClasses().BindDefaultInterface());
         }        
     }
 }
