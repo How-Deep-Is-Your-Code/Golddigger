@@ -35,6 +35,31 @@
             return this.usersRepo.All().FirstOrDefault(x => x.UserName == userName);
         }
 
+        public IQueryable<User> GetGolddiggerUsers()
+        {
+            return this.usersRepo
+                .All()
+                .Where(x => x.UserInfo.AccountType == AccountType.Golddigger
+                && x.UserInfo.AccountType != AccountType.Pimp);
+                
+
+        }
+        public IQueryable<User> GetSugadaddyUsers()
+        {
+            return this.usersRepo
+                .All()
+                .Where(x => x.UserInfo.AccountType == AccountType.Suggardaddy
+                && x.UserInfo.AccountType != AccountType.Pimp);
+        }
+
+        public IQueryable<User> GetSugamammaUsers()
+        {
+            return this.usersRepo
+                .All()
+                .Where(x => x.UserInfo.AccountType == AccountType.Sugarmamma
+                        && x.UserInfo.AccountType != AccountType.Pimp);
+        }
+
         public void Update()
         {
             this.usersRepo.SaveChanges();

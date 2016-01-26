@@ -34,11 +34,15 @@
 
         public IQueryable ListViewComments_GetData()
         {
-            var userId = this.User.Identity.GetUserId();
-            this.CurrentUser = users.GetById(userId);
+            string userId = this.Request.QueryString["id"];
             return this.comments.AllReceivedByUser(userId);
         }
 
+        public User ListViewUser_GetData()
+        {
+            string userId = this.Request.QueryString["id"];
+            return this.users.GetById(userId);
+        }
         protected void AddComment_Click(object sender, EventArgs e)
         {
             string userFromId = this.User.Identity.GetUserId();
