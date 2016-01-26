@@ -4,13 +4,13 @@
     using System.Linq;
     using System.Collections.Generic;
     using System.Web;
+    using System.Web.UI.WebControls;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
-
     using Services.Contracts;
     using Ninject;
     using Models;
-    using System.Web.UI.WebControls;
+
     public partial class Manage : System.Web.UI.Page
     {
         [Inject]
@@ -23,7 +23,6 @@
         public IUserInfoService userInfoServ { get; set; }
 
         public UserInfo info { get; set; }
-
 
         protected string SuccessMessage
         {
@@ -55,8 +54,6 @@
             this.DropDownListCategories.DataBind();
             //this.DropDownListCategories.SelectedIndex = 0;
 
-
-
             //var lol = repo.GetById(this.User.Identity.GetUserId());
             //var tapo = new List<User>();
             //var img = Convert.ToBase64String(lol.ProfilePhoto);
@@ -64,7 +61,6 @@
             //tapo.Add(lol);
             //this.test.DataSource = tapo;
             //this.test.DataBind();
-
 
             var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
@@ -150,9 +146,9 @@
             currentUser.UserInfo.Interests = interests;
             currentUser.UserInfo.Town = town;
 
-
             userInfoServ.Update();
             users.Update();
+            Response.Redirect("~/Account/Profile.aspx?id=" + currentUser.Id);
             //(AccountType)Enum.Parse(typeof(AccountType), type);
         }
 
