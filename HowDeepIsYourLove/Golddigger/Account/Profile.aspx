@@ -9,16 +9,20 @@
                         <asp:PlaceHolder runat="server" ID="itemPlaceHolder" />
                     </LayoutTemplate>
                     <ItemTemplate>
-                        <div><img src="<%# "data:image/jpeg;base64," + Convert.ToBase64String(Item.ProfilePhoto) %>" alt="Profile Photo" width="300" height="300"></div>
-                        <asp:Panel runat="server" Font-Size="XX-Large"><%# Item.UserName %></asp:Panel>
-                         <asp:Panel runat="server" Font-Size="X-Large"><%# string.Format("{0}", Item.IsFemale ? "Female" : "Male") %></asp:Panel>
-                        <asp:Panel runat="server" Font-Size="X-Large"><%# Item.Email %></asp:Panel>
+                        <div>
+                            <img src="<%# "data:image/jpeg;base64," + Convert.ToBase64String(Item.ProfilePhoto) %>" alt="Profile Photo" width="300" height="300"></div>
+                        <asp:Panel runat="server" Font-Size="XX-Large">Username: <%# Item.UserName %></asp:Panel>
+                        <asp:Panel runat="server" Font-Size="X-Large">Gender: <%# string.Format("{0}", Item.IsFemale ? "Female" : "Male") %></asp:Panel>
+                        <asp:Panel runat="server" Font-Size="X-Large">Email: <%# Item.Email %></asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
-            <asp:ListView ID="UserInterests" runat="server"
-                ItemType="Golddigger.Models.Interest">
-                <ItemTemplate><%#:Item.Name%></ItemTemplate>
-            </asp:ListView>
+                <asp:ListView ID="UserInterests" runat="server"
+                    ItemType="Golddigger.Models.Interest">
+                    <ItemTemplate>
+                        <asp:Panel runat="server" Font-Size="XX-Large">Interests: </asp:Panel>
+                        <asp:Panel runat="server" Font-Size="X-Large"><%# Item !=null?Item.Name: ""%></asp:Panel>
+                    </ItemTemplate>
+                </asp:ListView>
             </div>
         </div>
         <div class="col-md-6">

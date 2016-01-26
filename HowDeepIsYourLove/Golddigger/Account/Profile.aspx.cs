@@ -20,8 +20,9 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var userId = this.User.Identity.GetUserId();
+            string userId = this.Request.QueryString["id"];
             this.CurrentUser = users.GetById(userId);
+            // TODO check for null
             var interests = this.CurrentUser.UserInfo.Interests;
             this.UserInterests.DataSource = interests;
             this.UserInterests.DataBind();
