@@ -13,12 +13,30 @@ namespace Golddigger {
     public partial class _Default {
         
         /// <summary>
-        /// ListViewImages control.
+        /// ListViewGoldDiggerImages control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListViewImages;
+        protected global::System.Web.UI.WebControls.ListView ListViewGoldDiggerImages;
+        
+        /// <summary>
+        /// ListViewSugardaddiesImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewSugardaddiesImages;
+        
+        /// <summary>
+        /// ListViewSugarmammasImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListViewSugarmammasImages;
     }
 }

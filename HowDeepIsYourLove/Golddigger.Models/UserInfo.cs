@@ -1,12 +1,14 @@
 ﻿namespace Golddigger.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("UserInfo")]
     public class UserInfo
     {
-        public int Id { get; set; }
+        [Key]
+        public int UserInfoId { get; set; }
 
         private ICollection<Photo> photos;
         private ICollection<Comment> comments;
