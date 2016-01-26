@@ -16,7 +16,7 @@
 
         public IQueryable<Interest> All()
         {
-            return interestRepo.All();
+            return this.interestRepo.All();
         }
     }
 }

@@ -22,8 +22,13 @@
         {
             string userId = this.Request.QueryString["id"];
             this.CurrentUser = users.GetById(userId);
-            // TODO check for null
-            var interests = this.CurrentUser.UserInfo.Interests;
+            var interests = new List<Interest>();
+
+            if(this.CurrentUser.UserInfo != null)
+            {
+                interests = this.CurrentUser.UserInfo.Interests.ToList();
+            }
+
             this.UserInterests.DataSource = interests;
             this.UserInterests.DataBind();
 
