@@ -20,7 +20,12 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            var userId = this.User.Identity.GetUserId();
+            this.CurrentUser = users.GetById(userId);
+            var interests = this.CurrentUser.UserInfo.Interests;
+            this.UserInterests.DataSource = interests;
+            this.UserInterests.DataBind();
+
             if (!this.User.Identity.IsAuthenticated)
             {
                 Response.Redirect("~/");

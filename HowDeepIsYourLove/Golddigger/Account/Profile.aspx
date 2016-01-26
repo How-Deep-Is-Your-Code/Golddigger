@@ -15,6 +15,10 @@
                         <asp:Panel runat="server" Font-Size="X-Large"><%# Item.Email %></asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
+            <asp:ListView ID="UserInterests" runat="server"
+                ItemType="Golddigger.Models.Interest">
+                <ItemTemplate><%#:Item.Name%></ItemTemplate>
+            </asp:ListView>
             </div>
         </div>
         <div class="col-md-6">

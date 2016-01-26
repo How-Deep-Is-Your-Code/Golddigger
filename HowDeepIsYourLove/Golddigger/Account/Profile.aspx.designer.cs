@@ -19,7 +19,16 @@ namespace Golddigger.Account {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+        /// UserInterests control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListViewProfile;
+        
+        /// <summary>
+        protected global::System.Web.UI.WebControls.ListView UserInterests;
         
         /// <summary>
         /// CommentInput control.

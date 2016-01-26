@@ -14,6 +14,41 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-horizontal">
+                <h4>Create a new account</h4>
+                <hr />
+                <asp:ValidationSummary runat="server" CssClass="text-danger" />
+                <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="Country" CssClass="col-md-2 control-label">Country</asp:Label>
+                    <div class="col-md-10">
+                        <asp:TextBox runat="server" ID="Country" CssClass="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label runat="server" AssociatedControlID="Town" CssClass="col-md-2 control-label">Town</asp:Label>
+                    <div class="col-md-10">
+                        <asp:TextBox runat="server" ID="Town" CssClass="form-control" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <asp:CheckBoxList ID="DropDownListCategories" runat="server" DataTextField="Name" DataValueField="Id" CssClass="dropdown-category"></asp:CheckBoxList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <asp:Label runat="server" CssClass="col-md-2 control-label" AssociatedControlID="Type">Type:</asp:Label>
+                    <asp:RadioButtonList ID="Type" runat="server" CssClass="radio-inline">
+                        <asp:ListItem Value="0">Golddigger</asp:ListItem>
+                        <asp:ListItem Value="1">Suggardaddy</asp:ListItem>
+                        <asp:ListItem Value="2">Sugarmamma</asp:ListItem>
+                    </asp:RadioButtonList>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <asp:Button runat="server" OnClick="EditUserInfo_Click" Text="Edit User information" CssClass="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
                 <%--<asp:Image id="ProfileImg" runat="server"></asp:Image>
                 <asp:DetailsView ID="test" runat="server"
                     AutoGenerateRows="false">
@@ -23,6 +58,11 @@
                     </Fields>
 
                 </asp:DetailsView>--%>
+                <asp:DetailsView ID="UserInfoProps" runat="server">
+                    <Fields>
+                        <asp:BoundField DataField="user.UserInfo.Country" />
+                    </Fields>
+                </asp:DetailsView>
                 <h4>Change your account settings</h4>
                 <hr />
                 <dl class="dl-horizontal">
@@ -67,14 +107,14 @@
                             for details on setting up this ASP.NET application to support two-factor authentication.
                         </p>
                         <% if (TwoFactorEnabled)
-                          { %> 
+                            { %>
                         <%--
                         Enabled
                         <asp:LinkButton Text="[Disable]" runat="server" CommandArgument="false" OnClick="TwoFactorDisable_Click" />
                         --%>
                         <% }
-                          else
-                          { %> 
+                            else
+                            { %>
                         <%--
                         Disabled
                         <asp:LinkButton Text="[Enable]" CommandArgument="true" OnClick="TwoFactorEnable_Click" runat="server" />
