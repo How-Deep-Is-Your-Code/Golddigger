@@ -21,7 +21,7 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <asp:HyperLink NavigateUrl='<%# "~/Account/Profile.aspx?id=" + Item.Id %>' runat="server">
-                                <img src='<%# "data:image/jpeg;base64,"+ Convert.ToBase64String(Item.ProfilePhoto)%>' alt="Profile Photo" width="70" height="70" style="border-radius:5px;">
+                                <img src='<%# "data:image/jpeg;base64,"+ Convert.ToBase64String(Item.ProfilePhoto)%>' alt="Profile Photo" width="70" height="70">
                         </asp:HyperLink>
                     </ItemTemplate>
                 </asp:ListView>
@@ -35,7 +35,7 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <asp:HyperLink NavigateUrl='<%# "~/Account/Profile.aspx?id=" + Item.Id %>' runat="server">
-                        <img src='<%# "data:image/jpeg;base64,"+ Convert.ToBase64String(Item.ProfilePhoto)%>' alt="Profile Photo" width="70" height="70" style="border-radius:5px;">
+                        <img src='<%# "data:image/jpeg;base64,"+ Convert.ToBase64String(Item.ProfilePhoto)%>' alt="Profile Photo" width="70" height="70">
                         </asp:HyperLink>
                     </ItemTemplate>
                 </asp:ListView>
@@ -49,7 +49,7 @@
                     </LayoutTemplate>
                     <ItemTemplate>
                         <asp:HyperLink NavigateUrl='<%# "~/Account/Profile.aspx?id=" + Item.Id %>' runat="server">
-                        <img src='<%# "data:image/jpeg;base64,"+ Convert.ToBase64String(Item.ProfilePhoto)%>' alt="Profile Photo" width="70" height="70" style="border-radius:5px;">
+                        <img src='<%# "data:image/jpeg;base64,"+ Convert.ToBase64String(Item.ProfilePhoto)%>' alt="Profile Photo" width="70" height="70">
                         </asp:HyperLink>
                     </ItemTemplate>
                 </asp:ListView>

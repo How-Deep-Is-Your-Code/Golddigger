@@ -16,7 +16,10 @@
 
         public IQueryable<User> All()
         {
-            return this.usersRepo.All().OrderBy(u => u.Id);
+            return this.usersRepo
+                .All()
+                .OrderBy(u => u.Id)
+                .Where(u => u.UserInfo.AccountType != AccountType.Pimp);
         }
 
         public void Delete(string id)

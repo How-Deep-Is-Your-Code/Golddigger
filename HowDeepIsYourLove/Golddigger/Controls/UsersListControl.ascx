@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UsersListControl.ascx.cs" Inherits="Golddigger.Controls.UsersListControl" %>
 <div class="row">
-
     <div class="table-responsive">
         <table class="table">
             <thead>

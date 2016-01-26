@@ -45,3 +45,7 @@ table {
 table-layout: fixed;
 word-wrap: break-word;
 }
+
+img{
+    border-radius:5px;
+}
