@@ -1,17 +1,11 @@
-﻿using Golddigger.Models;
-using Golddigger.Services.Contracts;
-using Ninject;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace Golddigger
+﻿namespace Golddigger
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Golddigger.Models;
+    using Golddigger.Services.Contracts;
+    using Ninject;
+
     public partial class _Default : Ninject.Web.PageBase
     {
         [Inject]
@@ -19,13 +13,19 @@ namespace Golddigger
 
         public List<User> Images { get; set; }
 
-        protected void Page_Load(object sender, EventArgs e)
+        public IQueryable<User> ListViewImages_GetGolddiggers()
         {
+            return users.GetGolddiggerUsers();
         }
 
-        public IQueryable<User> ListViewImages_GetData()
-        {            
-            return users.GetGolddiggerUsers();
+        public IQueryable<User> ListViewImages_GetSugardaddies()
+        {
+            return users.GetSugadaddyUsers();
+        }
+
+        public IQueryable<User> ListViewImages_GetSugarmammas()
+        {
+            return users.GetSugamammaUsers();
         }
     }
 }
