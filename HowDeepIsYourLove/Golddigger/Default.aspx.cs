@@ -11,8 +11,6 @@
         [Inject]
         public IUsersService users { get; set; }
 
-        public List<User> Images { get; set; }
-
         public IQueryable<User> ListViewImages_GetGolddiggers()
         {
             return users.GetGolddiggerUsers();

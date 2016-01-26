@@ -36,3 +36,12 @@ input[type="select"] {
         padding: 0;
     }
 }
+
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+table {
+table-layout: fixed;
+word-wrap: break-word;
+}
