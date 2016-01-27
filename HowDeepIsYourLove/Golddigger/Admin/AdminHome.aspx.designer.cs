@@ -13,21 +13,21 @@ namespace Golddigger.Admin {
     public partial class AdminHome {
         
         /// <summary>
-        /// ViewAllUsers control.
+        /// UpdateGridPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ViewAllUsers;
+        protected global::System.Web.UI.UpdatePanel UpdateGridPanel;
         
         /// <summary>
-        /// DataPagerAll control.
+        /// GridViewUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataPager DataPagerAll;
+        protected global::System.Web.UI.WebControls.GridView GridViewUsers;
     }
 }

@@ -1,22 +1,57 @@
 ﻿namespace Golddigger.Admin
 {
     using System;
-    using Ninject;
-    using Services.Contracts;
     using System.Linq;
     using Models;
+    using Ninject;
+    using Services.Contracts;
+
     public partial class AdminHome : System.Web.UI.Page
     {
         [Inject]
         public IUsersService users { get; set; }
-        protected void Page_Load(object sender, EventArgs e)
+
+        public IQueryable<User> GridViewUsers_GetData()
         {
-            
+            return this.users.All();
         }
 
-        public IQueryable<User> GridViewAll_GetData()
+        public void GridViewUsers_UpdateItem(string id)
         {
-            return users.All();
+            User user = this.users.GetById(id);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", String.Format("Item with id {0} was not found", id));
+                return;
+            }
+
+            this.TryUpdateModel(user);
+
+            if (ModelState.IsValid)
+            {
+                this.users.Update();
+            }
+        }
+
+        public void GridViewUsers_DeleteItem(string id)
+        {
+            User user = this.users.GetById(id);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", string.Format("Item with id {0} was not found", id));
+                return;
+            }
+
+            this.TryUpdateModel(user);
+
+            if (ModelState.IsValid)
+            {
+                var userTarget = this.users.GetById(id);
+                userTarget.IsDeleted = true;
+                this.users.Update();
+            }
         }
     }
 }

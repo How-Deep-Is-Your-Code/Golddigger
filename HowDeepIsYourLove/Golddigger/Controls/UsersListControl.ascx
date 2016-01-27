@@ -8,10 +8,9 @@
                     <th>Username</th>
                     <th>Email</th>
                     <th>Gender</th>
-
                     <th>User Type</th>
                     <th>Town</th>
-                    <th>Country</th>n
+                    <th>Country</th>
                     <th>Interests</th>
                 </tr>
             </thead>
