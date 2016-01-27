@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Golddigger.Account.Profile" %>
+﻿<%@ Page ValidateRequest="false"  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Golddigger.Account.Profile" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="row">
@@ -11,7 +11,7 @@
                     <ItemTemplate>
                         <div>
                             <img src="<%# "data:image/jpeg;base64," + Convert.ToBase64String(Item.ProfilePhoto) %>" alt="Profile Photo" width="300" height="300"></div>
-                        <asp:Panel runat="server" Font-Size="XX-Large">Username: <%# Item.UserName %></asp:Panel>
+                        <asp:Panel runat="server" Font-Size="XX-Large">Username: <%# this.Server.HtmlEncode(Item.UserName) %></asp:Panel>
                         <asp:Panel runat="server" Font-Size="X-Large">Gender: <%# string.Format("{0}", Item.IsFemale ? "Female" : "Male") %></asp:Panel>
                         <asp:Panel runat="server" Font-Size="X-Large">Email: <%# Item.Email %></asp:Panel>
                     </ItemTemplate>
@@ -41,7 +41,7 @@
                         <p>
                             Sent on: <%# Item.CreatedOn.ToLocalTime()  %>
                         </p>
-                        <p> <%#: Item.Content %></p>
+                        <p> <%#: this.Server.HtmlDecode(Item.Content) %></p>
                         </itemtemplate>
                     </ItemTemplate>
                 </asp:ListView>
