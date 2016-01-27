@@ -49,3 +49,7 @@ word-wrap: break-word;
 img{
     border-radius:5px;
 }
+
+.admin-panel {
+    visibility:hidden;
+}

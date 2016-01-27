@@ -20,7 +20,7 @@
                 <asp:ListView ID="UserInterests" runat="server"
                     ItemType="Golddigger.Models.Interest">
                     <ItemTemplate>
-                        <asp:Panel runat="server" Font-Size="X-Large"><%# Item !=null? Item.Name: ""%></asp:Panel>
+                        <asp:Panel runat="server" Font-Size="X-Large"><%# Item !=null? Item.Name :""%></asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
             </div>
