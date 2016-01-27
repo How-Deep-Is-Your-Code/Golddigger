@@ -16,11 +16,11 @@
                         <asp:Panel runat="server" Font-Size="X-Large">Email: <%# Item.Email %></asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
+                <asp:Panel runat="server" Font-Size="XX-Large">Interests</asp:Panel>
                 <asp:ListView ID="UserInterests" runat="server"
                     ItemType="Golddigger.Models.Interest">
                     <ItemTemplate>
-                        <asp:Panel runat="server" Font-Size="XX-Large">Interests: </asp:Panel>
-                        <asp:Panel runat="server" Font-Size="X-Large"><%# Item !=null?Item.Name: ""%></asp:Panel>
+                        <asp:Panel runat="server" Font-Size="X-Large"><%# Item !=null? Item.Name: ""%></asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
             </div>

@@ -16,20 +16,22 @@
         [Inject]
         public ICommentsService comments { get; set; }
 
+        public List<Interest> Interests { get; set; }
+
         protected User CurrentUser { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             string userId = this.Request.QueryString["id"];
             this.CurrentUser = users.GetById(userId);
-            var interests = new List<Interest>();
+            
 
             if(this.CurrentUser.UserInfo != null)
             {
-                interests = this.CurrentUser.UserInfo.Interests.ToList();
+                Interests = this.CurrentUser.UserInfo.Interests.ToList();
             }
 
-            this.UserInterests.DataSource = interests;
+            this.UserInterests.DataSource = Interests;
             this.UserInterests.DataBind();
 
             if (!this.User.Identity.IsAuthenticated)
