@@ -22,31 +22,31 @@ namespace Golddigger.Account {
         protected global::System.Web.UI.WebControls.PlaceHolder successMessage;
         
         /// <summary>
-        /// Country control.
+        /// DropDownListCountries control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Country;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCountries;
         
         /// <summary>
-        /// Town control.
+        /// DropDownListTowns control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Town;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListTowns;
         
         /// <summary>
-        /// DropDownListCategories control.
+        /// CheckBoxInterests control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList DropDownListCategories;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxInterests;
         
         /// <summary>
         /// Type control.

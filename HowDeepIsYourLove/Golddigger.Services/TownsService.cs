@@ -18,5 +18,13 @@
         {
             return this.townsRepo.All();
         }
+
+        public IQueryable<Town> GetTownsForCountry(int id)
+        {
+            return this.All()
+                .OrderBy(t => t.Id)
+                .Skip((id - 1) * 4)
+                .Take(4);
+        }
     }
 }

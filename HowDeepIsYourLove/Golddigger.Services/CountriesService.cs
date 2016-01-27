@@ -1,11 +1,10 @@
-﻿using System;
-using System.Linq;
-using Golddigger.Models;
-using Golddigger.Services.Contracts;
-using Golddigger.Data.Contracts;
-
-namespace Golddigger.Services
+﻿namespace Golddigger.Services
 {
+    using System.Linq;
+    using Golddigger.Models;
+    using Golddigger.Services.Contracts;
+    using Golddigger.Data.Contracts;
+
     public class CountriesService : ICountriesService
     {
         private readonly IRepository<Country> countriesRepo;

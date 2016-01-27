@@ -6,5 +6,7 @@
     public interface ITownsService
     {
         IQueryable<Town> All();
+
+        IQueryable<Town> GetTownsForCountry(int id);
     }
 }

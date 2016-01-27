@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="Manage Account" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="Golddigger.Account.Manage" %>
+
 <%@ Register Src="~/Account/OpenAuthProviders.ascx" TagPrefix="uc" TagName="OpenAuthProviders" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
@@ -13,20 +14,30 @@
             <div class="form-horizontal">
                 <asp:ValidationSummary runat="server" CssClass="text-danger" />
                 <div class="form-group">
-                    <asp:Label runat="server" AssociatedControlID="Country" CssClass="col-md-2 control-label">Country</asp:Label>
-                    <div class="col-md-10">
-                        <asp:TextBox runat="server" ID="Country" CssClass="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <asp:Label runat="server" AssociatedControlID="Town" CssClass="col-md-2 control-label">Town</asp:Label>
-                    <div class="col-md-10">
-                        <asp:TextBox runat="server" ID="Town" CssClass="form-control" />
+                    <div class="col-md-offset-4 col-md-10">
+                        <asp:DropDownList ID="DropDownListCountries" runat="server"
+                            AutoPostBack="True"
+                            OnSelectedIndexChanged="itemSelected"
+                            AppendDataBoundItems="true"
+                            DataTextField="Name"
+                            DataValueField="Id">
+                            <asp:ListItem Text="- Select a town -" />
+                        </asp:DropDownList>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-4 col-md-10">
-                        <asp:CheckBoxList ID="DropDownListCategories" runat="server" DataTextField="Name" DataValueField="InterestId" CssClass="dropdown-category"></asp:CheckBoxList>
+                        <asp:DropDownList ID="DropDownListTowns" runat="server"
+                            AppendDataBoundItems="true"
+                            DataTextField="Name"
+                            DataValueField="Id">
+                            <asp:ListItem Text="- Select a city -" />
+                        </asp:DropDownList>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-10">
+                        <asp:CheckBoxList ID="CheckBoxInterests" runat="server" DataTextField="Name" DataValueField="InterestId" CssClass="dropdown-category"></asp:CheckBoxList>
                     </div>
                 </div>
                 <div class="form-group">
