@@ -6,5 +6,7 @@
     public interface IInterestService
     {
         IQueryable<Interest> All();
+
+        Interest GetInterestById(int id);
     }
 }

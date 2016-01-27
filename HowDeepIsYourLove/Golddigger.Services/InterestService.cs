@@ -18,5 +18,10 @@
         {
             return this.interestRepo.All();
         }
+
+        public Interest GetInterestById(int id)
+        {
+            return this.interestRepo.GetById(id);
+        }
     }
 }

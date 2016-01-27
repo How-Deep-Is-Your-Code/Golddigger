@@ -17,7 +17,13 @@
         public IUsersService users { get; set; }
 
         [Inject]
-        public IInterestService interests { get; set; }
+        public IInterestService interestsServ { get; set; }
+
+        [Inject]
+        public ICountriesService counties { get; set; }
+
+        [Inject]
+        public ITownsService towns { get; set; }
 
         [Inject]
         public IUserInfoService userInfoServ { get; set; }
@@ -48,19 +54,16 @@
             var userId = this.User.Identity.GetUserId();
             var user = users.GetById(userId);
 
-            var allInterests = interests.All().ToList();
+            if (!IsPostBack)
+            {
+                var allCountries = counties.All().ToList();
+                this.DropDownListCountries.DataSource = allCountries;
+                this.DropDownListCountries.DataBind();
 
-            this.DropDownListCategories.DataSource = allInterests;
-            this.DropDownListCategories.DataBind();
-            //this.DropDownListCategories.SelectedIndex = 0;
-
-            //var lol = repo.GetById(this.User.Identity.GetUserId());
-            //var tapo = new List<User>();
-            //var img = Convert.ToBase64String(lol.ProfilePhoto);
-            //ProfileImg.ImageUrl = "data:image/jpeg;base64," + img;
-            //tapo.Add(lol);
-            //this.test.DataSource = tapo;
-            //this.test.DataBind();
+                var allInterests = interestsServ.All().ToList();
+                this.CheckBoxInterests.DataSource = allInterests;
+                this.CheckBoxInterests.DataBind();
+            }
 
             var manager = Context.GetOwinContext().GetUserManager<UserManager>();
 
@@ -107,21 +110,27 @@
             }
         }
 
+        protected void itemSelected(object sender, EventArgs e)
+        {
+            var dropDownList = sender as DropDownList;
+
+            var firstTownId = dropDownList.SelectedItem.Value;
+            var id = int.Parse(firstTownId);
+
+            var townsForDropDown = towns.GetTownsForCountry(id).ToList();
+            this.DropDownListTowns.Items.Clear();
+            this.DropDownListTowns.DataSource = townsForDropDown;
+            this.DropDownListTowns.DataBind();
+        }
+
         protected void EditUserInfo_Click(object sender, EventArgs e)
         {
-            var country = new Country();
-            country.Name = Country.Text;
-
-            var town = new Town();
-            town.Name = Town.Text;
-
             var interests = new HashSet<Interest>();
-            foreach (ListItem item in DropDownListCategories.Items)
+            foreach (ListItem item in CheckBoxInterests.Items)
             {
                 if (item.Selected)
                 {
-                    var interest = new Interest();
-                    interest.Name = item.ToString();
+                    var interest = interestsServ.GetInterestById(int.Parse(item.Value));
                     interests.Add(interest);
                 }
             }
@@ -142,14 +151,31 @@
             }
 
             currentUser.UserInfo.AccountType = (AccountType)typeAsNumber;
-            currentUser.UserInfo.Country = country;
-            currentUser.UserInfo.Interests = interests;
-            currentUser.UserInfo.Town = town;
+            currentUser.UserInfo.CountryId = int.Parse(DropDownListCountries.SelectedItem.Value);
+            currentUser.UserInfo.TownId = int.Parse(DropDownListTowns.SelectedItem.Value);
+
+            var usersInterests = currentUser.UserInfo.Interests;
+            foreach (var interest in interests)
+            {
+                var isNewInterest = true;
+                foreach (var item in usersInterests)
+                {
+                    if(interest.InterestId == item.InterestId)
+                    {
+                        isNewInterest = false;
+                        break;
+                    }
+                }
+
+                if(isNewInterest)
+                {
+                    currentUser.UserInfo.Interests.Add(interest);
+                }
+            }
 
             userInfoServ.Update();
             users.Update();
             Response.Redirect("~/Account/Profile.aspx?id=" + currentUser.Id);
-            //(AccountType)Enum.Parse(typeof(AccountType), type);
         }
 
         private void AddErrors(IdentityResult result)
