@@ -19,8 +19,8 @@ namespace Golddigger.Account
             var signInManager = Context.GetOwinContext().Get<SignInManager>();
             var user = new User()
             {
-                UserName = Username.Text,
-                Email = Email.Text,
+                UserName = this.Server.HtmlEncode(Username.Text),
+                Email = this.Server.HtmlEncode(Email.Text),
                 IsFemale = bool.Parse(Gender.SelectedValue),
                 ProfilePhoto = Photo.FileBytes
                 

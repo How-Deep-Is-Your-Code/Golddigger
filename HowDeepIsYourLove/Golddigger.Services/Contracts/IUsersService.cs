@@ -7,6 +7,8 @@
     {
         IQueryable<User> All();
 
+        IQueryable<User> AllWithDeleted();
+
         IQueryable<User> GetGolddiggerUsers();
 
         IQueryable<User> GetSugadaddyUsers();

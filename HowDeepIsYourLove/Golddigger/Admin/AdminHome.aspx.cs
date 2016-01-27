@@ -13,7 +13,7 @@
 
         public IQueryable<User> GridViewUsers_GetData()
         {
-            return this.users.All();
+            return this.users.AllWithDeleted();
         }
 
         public void GridViewUsers_UpdateItem(string id)

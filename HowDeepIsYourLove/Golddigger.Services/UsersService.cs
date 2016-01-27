@@ -14,12 +14,20 @@
             this.usersRepo = usersRepo;
         }
 
-        public IQueryable<User> All()
+        public IQueryable<User> AllWithDeleted()
         {
             return this.usersRepo
                 .All()
                 .OrderBy(u => u.Id)
                 .Where(u => u.UserInfo.AccountType != AccountType.Pimp);
+        }
+        public IQueryable<User> All()
+        {
+            return this.usersRepo
+                .All()
+                .OrderBy(u => u.Id)
+                .Where(u => u.UserInfo.AccountType != AccountType.Pimp
+                        && !u.IsDeleted);
         }
 
         public void Delete(string id)
@@ -35,7 +43,9 @@
 
         public User GetByUserName(string userName)
         {
-            return this.usersRepo.All().FirstOrDefault(x => x.UserName == userName);
+            return this.usersRepo
+                .All()
+                .FirstOrDefault(x => x.UserName == userName);
         }
 
         public IQueryable<User> GetGolddiggerUsers()
@@ -44,7 +54,8 @@
                 .All()
                 .OrderBy(x=>x.Id)
                 .Where(x => x.UserInfo.AccountType == AccountType.Golddigger
-                && x.UserInfo.AccountType != AccountType.Pimp);
+                && x.UserInfo.AccountType != AccountType.Pimp
+                && !x.IsDeleted);
                 
 
         }
@@ -54,7 +65,8 @@
                 .All()
                 .OrderBy(x => x.Id)
                 .Where(x => x.UserInfo.AccountType == AccountType.Suggardaddy
-                && x.UserInfo.AccountType != AccountType.Pimp);
+                && x.UserInfo.AccountType != AccountType.Pimp
+                && !x.IsDeleted);
         }
 
         public IQueryable<User> GetSugamammaUsers()
@@ -63,7 +75,8 @@
                 .All()
                 .OrderBy(x => x.Id)
                 .Where(x => x.UserInfo.AccountType == AccountType.Sugarmamma
-                        && x.UserInfo.AccountType != AccountType.Pimp);
+                        && x.UserInfo.AccountType != AccountType.Pimp
+                        && !x.IsDeleted);
         }
 
         public void Update()

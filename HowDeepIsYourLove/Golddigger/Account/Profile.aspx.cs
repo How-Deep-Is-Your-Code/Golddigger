@@ -60,7 +60,7 @@
         {
             string userFromId = this.User.Identity.GetUserId();
             string userToId = this.Request.QueryString["id"];
-            string content = this.CommentInput.Text;
+            string content = this.Server.HtmlEncode(this.CommentInput.Text);
             this.comments.Add(userFromId, userToId, content);
             Response.Redirect(Request.Url.AbsoluteUri);
         }
