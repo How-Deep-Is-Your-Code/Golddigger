@@ -1,6 +1,5 @@
 ﻿namespace Golddigger
 {
-    using System.Collections.Generic;
     using System.Linq;
     using Golddigger.Models;
     using Golddigger.Services.Contracts;
@@ -13,17 +12,17 @@
 
         public IQueryable<User> ListViewImages_GetGolddiggers()
         {
-            return users.GetGolddiggerUsers();
+            return users.GetGolddiggerUsers().Take(10);
         }
 
         public IQueryable<User> ListViewImages_GetSugardaddies()
         {
-            return users.GetSugadaddyUsers();
+            return users.GetSugadaddyUsers().Take(10);
         }
 
         public IQueryable<User> ListViewImages_GetSugarmammas()
         {
-            return users.GetSugamammaUsers();
+            return users.GetSugamammaUsers().Take(10);
         }
     }
 }

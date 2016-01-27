@@ -42,6 +42,7 @@
         {
             return this.usersRepo
                 .All()
+                .OrderBy(x=>x.Id)
                 .Where(x => x.UserInfo.AccountType == AccountType.Golddigger
                 && x.UserInfo.AccountType != AccountType.Pimp);
                 
@@ -51,6 +52,7 @@
         {
             return this.usersRepo
                 .All()
+                .OrderBy(x => x.Id)
                 .Where(x => x.UserInfo.AccountType == AccountType.Suggardaddy
                 && x.UserInfo.AccountType != AccountType.Pimp);
         }
@@ -59,6 +61,7 @@
         {
             return this.usersRepo
                 .All()
+                .OrderBy(x => x.Id)
                 .Where(x => x.UserInfo.AccountType == AccountType.Sugarmamma
                         && x.UserInfo.AccountType != AccountType.Pimp);
         }
