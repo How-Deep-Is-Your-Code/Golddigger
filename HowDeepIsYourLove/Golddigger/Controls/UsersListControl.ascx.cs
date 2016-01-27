@@ -8,6 +8,8 @@
   
     public partial class UsersListControl : System.Web.UI.UserControl
     {
+        protected System.Web.UI.WebControls.HyperLink AdminButton;
+
         [Inject]
         public IUsersService users { get; set; }
 

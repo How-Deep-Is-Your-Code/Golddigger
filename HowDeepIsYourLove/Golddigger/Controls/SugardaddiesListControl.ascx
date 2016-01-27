@@ -24,9 +24,9 @@
                                 <asp:HyperLink NavigateUrl='<%# "~/Account/Profile.aspx?id=" + Item.Id %>' runat="server" Text="<%#: Item.UserName %>" /></td>
                             <td><%# Item.Email %></td>
                             <td><%# Item.IsFemale ? "Female" : "Male" %></td>
-                            <td><%# (Item.UserInfo != null && Item.UserInfo.Town != null) ? Item.UserInfo.Town.Name : "No information" %></td>
-                            <td><%# Item.UserInfo != null && Item.UserInfo.Country != null ? Item.UserInfo.Country.Name : "No information" %></td>
-                            <td><%# Item.UserInfo != null && Item.UserInfo.Interests != null ? string.Join(", ",Item.UserInfo.Interests.Select(i=>i.Name)) : "No information" %></td>
+                            <td><%# (Item.UserInfo != null && Item.UserInfo.Town != null) ? Item.UserInfo.Town.Name : "" %></td>
+                            <td><%# Item.UserInfo != null && Item.UserInfo.Country != null ? Item.UserInfo.Country.Name : "" %></td>
+                            <td><%# Item.UserInfo != null && Item.UserInfo.Interests != null ? string.Join(", ",Item.UserInfo.Interests.Select(i=>i.Name)) : "" %></td>
                         </tr>
                     </tbody>
                 </ItemTemplate>

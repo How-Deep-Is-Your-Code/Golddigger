@@ -7,10 +7,11 @@
                     <th>Profile Photo</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>User Type</th>
                     <th>Gender</th>
+
+                    <th>User Type</th>
                     <th>Town</th>
-                    <th>Country</th>
+                    <th>Country</th>n
                     <th>Interests</th>
                 </tr>
             </thead>
@@ -23,11 +24,11 @@
                             <td>
                                 <asp:HyperLink NavigateUrl='<%# "~/Account/Profile.aspx?id=" + Item.Id %>' runat="server" Text="<%#: Item.UserName %>" /></td>
                             <td><%# Item.Email %></td>
-                            <td><%# Item.UserInfo != null? Item.UserInfo.AccountType.ToString() : "No information" %></td>
+                            <td><%# Item.UserInfo != null? Item.UserInfo.AccountType.ToString() : "" %></td>
                             <td><%# Item.IsFemale ? "Female" : "Male" %></td>
-                            <td><%# (Item.UserInfo != null && Item.UserInfo.Town != null) ? Item.UserInfo.Town.Name : "No information" %></td>
-                            <td><%# Item.UserInfo != null && Item.UserInfo.Country != null ? Item.UserInfo.Country.Name : "No information" %></td>
-                            <td><%# Item.UserInfo != null && Item.UserInfo.Interests != null ? string.Join(", ",Item.UserInfo.Interests.Select(i=>i.Name)) : "No information" %></td>
+                            <td><%# (Item.UserInfo != null && Item.UserInfo.Town != null) ? Item.UserInfo.Town.Name : "" %></td>
+                            <td><%# Item.UserInfo != null && Item.UserInfo.Country != null ? Item.UserInfo.Country.Name : "" %></td>
+                            <td><%# Item.UserInfo != null && Item.UserInfo.Interests != null ? string.Join(", ",Item.UserInfo.Interests.Select(i=>i.Name)) : "" %></td>
                         </tr>
                     </tbody>
                 </ItemTemplate>
@@ -37,7 +38,7 @@
     <div class="text-center">
         <asp:DataPager class="btn-group btn-group-sm" ID="allUsersPager" runat="server" PagedControlID="ListViewAllUsers" PageSize="5">
             <Fields>
-                <asp:NextPreviousPagerField PreviousPageText="<" ShowPreviousPageButton="true" ShowNextPageButton="false" 
+                <asp:NextPreviousPagerField PreviousPageText="<" ShowPreviousPageButton="true" ShowNextPageButton="false"
                     ButtonCssClass="btn btn-default" RenderNonBreakingSpacesBetweenControls="false" RenderDisabledButtonsAsLabels="false" />
                 <asp:NumericPagerField ButtonType="Link" CurrentPageLabelCssClass="btn btn-primary disabled" RenderNonBreakingSpacesBetweenControls="false"
                     NumericButtonCssClass="btn btn-default" ButtonCount="10" NextPageText="..." NextPreviousButtonCssClass="btn btn-default" />
