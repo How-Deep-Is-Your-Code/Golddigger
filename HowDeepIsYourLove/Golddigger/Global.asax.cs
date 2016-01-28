@@ -4,7 +4,6 @@
     using System.Web;
     using System.Web.Optimization;
     using System.Web.Routing;
-    using System.Web.UI.WebControls;
     using Golddigger.App_Start;
 
     public class Global : HttpApplication
