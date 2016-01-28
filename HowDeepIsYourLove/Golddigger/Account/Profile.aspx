@@ -1,4 +1,4 @@
-﻿<%@ Page ValidateRequest="false"  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Golddigger.Account.Profile" %>
+﻿<%@ Page ErrorPage="~/ErrorPage.aspx" ValidateRequest="false"  Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="Golddigger.Account.Profile" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="row">

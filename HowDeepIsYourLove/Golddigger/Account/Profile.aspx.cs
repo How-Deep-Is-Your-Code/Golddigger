@@ -36,12 +36,31 @@
 
             if (!this.User.Identity.IsAuthenticated)
             {
-                Response.Redirect("~/");
+                throw new UnauthorizedAccessException("Unauthorized access! You need to log in to view profile details!");
             }
 
             if (!Page.IsPostBack)
             {
                 ListViewComments_GetData();
+            }
+        }
+        private void Page_Error(object sender, EventArgs e)
+        {
+            // Get last error from the server.
+            Exception exc = Server.GetLastError();
+
+            if(exc is UnauthorizedAccessException)
+            {
+                Server.Transfer("ErrorPage.aspx?handler=403%20-%20Default.aspx",
+                    true);
+            }
+
+            // Handle specific exception.
+            if (exc is InvalidOperationException)
+            {
+                // Pass the error on to the error page.
+                Server.Transfer("ErrorPage.aspx?handler=Page_Error%20-%20Default.aspx",
+                    true);
             }
         }
 

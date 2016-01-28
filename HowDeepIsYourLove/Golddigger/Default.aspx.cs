@@ -4,7 +4,7 @@
     using Golddigger.Models;
     using Golddigger.Services.Contracts;
     using Ninject;
-
+    using System;
     public partial class _Default : Ninject.Web.PageBase
     {
         [Inject]

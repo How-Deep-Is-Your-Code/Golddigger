@@ -39,6 +39,7 @@
                 IsFemale = true,
                 ProfilePhoto = new byte[8]
             };
+            
             IdUserResult = userMgr.Create(appUser, "Pa$$word1");
 
             // If the new "admin" user was successfully created, 
