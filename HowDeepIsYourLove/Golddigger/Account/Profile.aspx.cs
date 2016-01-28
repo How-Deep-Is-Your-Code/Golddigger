@@ -81,7 +81,9 @@
             string userToId = this.Request.QueryString["id"];
             string content = this.CommentInput.Text;
             this.comments.Add(userFromId, userToId, content);
-            Response.Redirect(Request.Url.AbsoluteUri);
+            this.UpdatePanelTest.Visible = true;
+            this.ListViewComments.UpdateMethod = "ListViewComments_GetData";
+            this.UpdatePanelTest.Update();         
         }
     }
 }

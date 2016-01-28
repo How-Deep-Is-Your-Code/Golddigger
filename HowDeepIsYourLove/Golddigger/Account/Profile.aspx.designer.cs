@@ -40,6 +40,33 @@ namespace Golddigger.Account {
         protected global::System.Web.UI.WebControls.TextBox CommentInput;
         
         /// <summary>
+        /// itemPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder itemPlaceHolder;
+        
+        /// <summary>
+        /// UpdatePanelTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelTest;
+        
+        /// <summary>
+        /// PanelTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelTest;
+        
+        /// <summary>
         /// ListViewComments control.
         /// </summary>
         /// <remarks>
